@@ -9,6 +9,8 @@
         <variable
             name="sleepDetailViewModel"
             type="com.example.android.trackmysleepquality.sleepdetail.SleepDetailViewModel" />
+
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,7 +29,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
+<!--        app:setSleepImage="@{sleepDetailViewModel.night}"-->
         <TextView
             android:id="@+id/quality_string"
             android:layout_width="wrap_content"

@@ -22,7 +22,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.android.trackmysleepquality.database.SleepDatabaseDao
 import com.example.android.trackmysleepquality.database.SleepNight
-import kotlinx.coroutines.Job
 
 /**
  * ViewModel for SleepQualityFragment.
@@ -30,8 +29,9 @@ import kotlinx.coroutines.Job
  * @param sleepNightKey The key of the current night we are working on.
  */
 class SleepDetailViewModel(
-        private val sleepNightKey: Long = 0L,
-        dataSource: SleepDatabaseDao) : ViewModel() {
+    private val sleepNightKey: Long = 0L,
+    dataSource: SleepDatabaseDao
+) : ViewModel() {
 
     /**
      * Hold a reference to SleepDatabase via its SleepDatabaseDao.
@@ -49,6 +49,8 @@ class SleepDetailViewModel(
     init {
         night.addSource(database.getNightWithId(sleepNightKey), night::setValue)
     }
+
+    //val night = database.getNightWithId(sleepNightKey)
 
     /**
      * Variable that tells the fragment whether it should navigate to [SleepTrackerFragment].
